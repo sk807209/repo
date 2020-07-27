@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: pod
+metadata:
+ name: nginx
+ labels:
+   app: nginx-server
+spec:
+  containers:
+  -name: nginx-custom
+   image: saikrishn1996/nginx-custom:tagname
+   ports:
+    -containerPort:80
+
+for deploying into the google app engine use the following commands
+
+gcloud app deploy
+
+gcloud app browse
