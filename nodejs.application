@@ -1,0 +1,30 @@
+FROM node:13-alpine
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+
+RUN npm install --production
+
+COPY ..
+
+EXPOSE 3000
+
+CMD node nodejs.application
+
+build this docker file 
+
+docker built -t kamaln7/node-hello-app .
+docker run --rm -d -p 3000:3000 kamaln7/node-hello-app
+docker push kamaln7/node-hello-app
+
+commands for node app to kubernetes
+
+kubectl get nodes
+
+kubectl create deployment --image kamaln/node-hello-app node-app
+
+kubectl expose deployment node-app --port 3000
+
+kubectl get services
+
