@@ -1,0 +1,29 @@
+#Install dependencies
+-name:node
+ entry point: npm
+ args: ['install']
+#Run tests
+-name:node
+ entry point: npm
+ args: ['install']
+-name: node 
+ entrypoint: npm
+ args: ['test']
+#Run custom commands
+-name:node
+ entry point: npm
+ args: ['install']
+-name: node
+ entrypoint: npm
+ args: ['test']
+-name: node
+ entrypoint : npm
+ args: ['run', 'build']
+
+
+Deploying a nodejs to gcp
+
+gcloud builds submit -----build.config/test.js\
+
+gcloud app deploy
+
